@@ -1,51 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Players from './Players';
 
 function MyComponent() {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState(null);
 
+  //to figure out the game id of the most recent game we must fetch the games played by a team in a given year and then sort in decending order
+  //this is because the list of teams is recieved in oldest to newest this year
   useEffect(() => {
-    const fetchPosts = async () => {
-      const options = {
-        method: 'GET',
-        url: 'https://free-to-play-games-database.p.rapidapi.com/api/filter',
-        params: {
-          tag: '3d.mmorpg.fantasy.pvp',
-          platform: 'pc',
-        },
-        headers: {
-          'X-RapidAPI-Key': '000ab2eadbmshdb5e264cda6750ap1ec88djsn2fd937e60c56',
-          'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
-        },
-      };
-
+    const fetchData = async () => {
       try {
-        const response = await axios.request(options);
-        setPosts(response.data); // Set the fetched data to the 'posts' state
-        setIsLoading(false); // Set 'isLoading' to false once the data is fetched
+        const response = await axios.get('https://api-nba-v1.p.rapidapi.com/players/statistics', {
+          params: {
+            game: '12473',
+            team: '20',
+            season: '2022'
+          },
+          headers: {
+            'X-RapidAPI-Key': '000ab2eadbmshdb5e264cda6750ap1ec88djsn2fd937e60c56',
+            'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
+          }
+        });
+
+        setData(response.data);  
+        console.log(response.data.response);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchPosts();
+    fetchData();
   }, []);
 
   return (
-    <div>
-      {isLoading ? (
-        <p>Loading posts...</p>
-      ) : (
-        <ul>
-          {posts.map((post) => (
-            <li key={post.id}>
-              <h3>{post.title}</h3>
-              <p>{post.body}</p>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className='players-container'>
+        {data && data.response.map((player, index) => (
+            <Players key={index} player={player} />
+      ))}
     </div>
   );
 };
