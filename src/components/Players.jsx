@@ -6,8 +6,8 @@ function Players({ player }) {
         <div className="player">
             <div className='player-header'>
                 <div className='name-pos'>
-                    <p className="name">{player.player.firstname} {player.player.lastname}</p>
-                    <h2 className="position">Position: {player.pos}</h2>
+                    <p className="player-name">{player.player.firstname} {player.player.lastname}</p>
+                    <h2 className="player-position">Position: {player.pos}</h2>
                 </div>
                 <img className='player-logo' src={player.team.logo} alt="Player Logo" />
             </div>

@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className='root'>
-      <h1>2023 Miami Heat</h1>
+      <h1 className='header'>2023 Miami Heat</h1>
       <MyComponent />
     </div>
   )

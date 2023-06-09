@@ -22,8 +22,15 @@ function MyComponent() {
           }
         });
 
-        setData(response.data);  
-        console.log(response.data.response);
+        const sortedPlayers = response.data.response.sort((a, b) => {
+          const minA = parseInt(a.min, 10);
+          const minB = parseInt(b.min, 10);
+
+          return minB - minA;  // For descending order
+        });
+
+        setData(sortedPlayers);
+        console.log(sortedPlayers)
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -34,9 +41,19 @@ function MyComponent() {
 
   return (
     <div className='players-container'>
-        {data && data.response.map((player, index) => (
-            <Players key={index} player={player} />
-      ))}
+      <h2>Impact Players</h2>
+      <div className="first-five-players">
+        {data && data.slice(0, 5).map((player, index) => (
+          <Players key={index} player={player} />
+        ))}
+      </div>
+
+      <h2>Team</h2>
+      <div className="rest-of-players">
+        {data && data.slice(5).map((player, index) => (
+          <Players key={index} player={player} />
+        ))}
+      </div>
     </div>
   );
 };
