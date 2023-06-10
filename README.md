@@ -13,6 +13,7 @@ Prerequisites
 First off, clone the repo:
 
 git clone https://github.com/AustinHood7/ViteNBA
+
 cd vite-nba
 
 
@@ -26,13 +27,13 @@ npm run dev
 The application will be served at http://localhost:3000 and will reload automatically when you change and save files.
 Production
 
-To create a production build, you can run:
+#### To create a production build, you can run:
 
 npm run build
 
 This will create a dist directory with the compiled assets.
 
-To serve the production build, you can run:
+#### To serve the production build, you can run:
 
 npm run serve
 
@@ -47,7 +48,7 @@ License
 
 This project is licensed under the MIT License.
 
-##Questions or Issues?
+## Questions or Issues?
 
 If you have any questions or run into any issues, please open an issue in this repository.
 A Next.JS website built to display static content with Server-Side Rendering. Tailwind was used to do all styling in this project.
