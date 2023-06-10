@@ -2,7 +2,6 @@ import React from 'react'
 
 function Players({ player }) {
     return (
-        //we can sort this list by the minutes played to get the most important players first.
         <div className="player">
             <div className='player-header'>
                 <div className='name-pos'>
