@@ -7,8 +7,8 @@ Prerequisites
     npm >= 7.0.0
     Familiarity with Vite and Axios
 
-##Setup & Installation
-Clone the Repository
+## Setup & Installation
+### Clone the Repository
 
 First off, clone the repo:
 
@@ -16,8 +16,8 @@ git clone https://github.com/AustinHood7/ViteNBA
 cd vite-nba
 
 
-Usage
-Development
+## Usage
+### Development
 
 To start a local development server, you can run:
 
@@ -47,12 +47,12 @@ License
 
 This project is licensed under the MIT License.
 
-Questions or Issues?
+##Questions or Issues?
 
 If you have any questions or run into any issues, please open an issue in this repository.
 A Next.JS website built to display static content with Server-Side Rendering. Tailwind was used to do all styling in this project.
 
-# [Deployment (Vercel)](https://austinmhood.vercel.app/)
+# [Deployment (Vercel)](https://vite-nba.vercel.app/)
 
 <!-- Markdown Links and Images -->
 
