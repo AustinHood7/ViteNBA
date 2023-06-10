@@ -1,4 +1,4 @@
-# Vite NBA**
+# Vite NBA
 
 This repository contains a web application that uses Vite as a build tool, React.js as a front-end framework, and Axios for making HTTP requests to a third-party API to display information about the Miami Heat basketball team.
 Prerequisites
@@ -7,12 +7,10 @@ Prerequisites
     npm >= 7.0.0
     Familiarity with Vite and Axios
 
-Setup & Installation
+##Setup & Installation
 Clone the Repository
 
 First off, clone the repo:
-
-bash
 
 git clone https://github.com/AustinHood7/ViteNBA
 cd vite-nba
